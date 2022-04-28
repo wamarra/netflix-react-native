@@ -18,12 +18,16 @@ import {
   TextButtonPlay,
 } from './hero-styled';
 
+const logo = '../../assets/logo.png';
+const banner = '../../assets/banner.png';
+
 const Hero = ({ poster, startBottomSheet }) => {
+  const [myListIcon, setMyListIcon] = React.useState('plus');
   const renderMovieCard = React.useMemo(
     () => (
       <MovieCard>
         <MoviePoster resizeMode="cover" source={poster} />
-        <Logo resizeMode="contain" source={require('../../assets/logo.png')} />
+        <Logo resizeMode="contain" source={require(logo)} />
       </MovieCard>
     ),
     [poster],
@@ -32,18 +36,18 @@ const Hero = ({ poster, startBottomSheet }) => {
   return (
     <Container>
       <LinearGradient colors={['transparent', 'black']}>
-        <Banner
-          resizeMode="contain"
-          source={require('../../assets/banner.png')}
-        />
+        <Banner resizeMode="contain" source={require(banner)} />
         <Tags>
           <MenuTag>Envolvente</MenuTag>
           <Separator />
           <MenuTag>Empolgantes</MenuTag>
         </Tags>
         <MenuHero>
-          <Button>
-            <Feather name="plus" size={26} color="white" />
+          <Button
+            onPress={() =>
+              setMyListIcon(actual => (actual === 'plus' ? 'check' : 'plus'))
+            }>
+            <Feather name={myListIcon} size={26} color="white" />
             <TextButton>Minha lista</TextButton>
           </Button>
 

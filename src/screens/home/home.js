@@ -6,11 +6,13 @@ import BottomSheetContent from '../../components/bottom-sheet/bottom-sheet-conte
 import Header from '../../components/header/header';
 import Hero from '../../components/hero/hero';
 import Movies from '../../components/movies/movies';
-import { useMovies } from '../../services/movies';
+import { useMovie } from '../../services/movie';
 import { Container, Poster } from './home-styled';
 
-const Home = () => {
-  const { movies, moviePosters } = useMovies();
+const posterImage = '../../assets/poster.jpg';
+
+const Home = ({ navigation }) => {
+  const { movies, moviePosters } = useMovie();
   const [movie, setMovie] = React.useState();
   const [movieCard, setMovieCard] = React.useState();
   const [moviesRecentlyAdded, setMoviesRecentlyAdded] = React.useState([]);
@@ -78,10 +80,8 @@ const Home = () => {
         barStyle="light-content"
       />
       <Container>
-        <Poster
-          style={posterAnimation}
-          source={require('../../assets/poster.jpg')}>
-          <Header />
+        <Poster style={posterAnimation} source={require(posterImage)}>
+          <Header navigation={navigation} />
           <Hero
             poster={moviePosters[0]?.poster}
             startBottomSheet={handleSnapPress}

@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const BottomSheetWrapper = styled.View`
   flex-direction: column;

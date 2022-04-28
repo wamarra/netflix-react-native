@@ -13,10 +13,7 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 });
 
 const HeadlessCheck = ({ isHeadless }) => {
-  if (isHeadless) {
-    return null;
-  }
-  return <App />;
+  return isHeadless ? null : <App />;
 };
 
 AppRegistry.registerComponent(appName, () => HeadlessCheck);

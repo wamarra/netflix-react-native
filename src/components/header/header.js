@@ -2,7 +2,9 @@ import * as React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { Container, Logo, Menu } from './header-styled';
 
-const Header = () => {
+const logo = '../../assets/logo.png';
+
+const Header = ({ navigation }) => {
   const [menu, setMenu] = React.useState([]);
 
   React.useEffect(() => {
@@ -12,9 +14,13 @@ const Header = () => {
   return (
     <LinearGradient colors={['#3d3d3f', 'transparent']}>
       <Container>
-        <Logo resizeMode="contain" source={require('../../assets/logo.png')} />
+        <Logo resizeMode="contain" source={require(logo)} />
         {menu?.map(menuItem => (
-          <Menu key={menuItem}>{menuItem}</Menu>
+          <Menu
+            onPress={() => navigation.navigate('ProfileView')}
+            key={menuItem}>
+            {menuItem}
+          </Menu>
         ))}
       </Container>
     </LinearGradient>

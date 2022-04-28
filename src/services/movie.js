@@ -35,7 +35,7 @@ const top10NumbersApi = {
 
 const moviesApi = require('../assets/movies.json');
 
-export const useMovies = () => {
+export const useMovie = () => {
   const [movies, setMovies] = React.useState([]);
   const [moviePosters, setMoviePosters] = React.useState([]);
   const [top10Numbers, setTop10Numbers] = React.useState([]);

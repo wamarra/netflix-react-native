@@ -17,6 +17,8 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const BottomSheetContent = ({ movieCard, movie, handleClosePress }) => {
+  const [myListIcon, setMyListIcon] = React.useState('plus');
+
   return (
     <BottomSheetWrapper>
       <ContainerBottomSheet>
@@ -49,9 +51,12 @@ const BottomSheetContent = ({ movieCard, movie, handleClosePress }) => {
           </IconBottomCircle>
           <SmallLabel>Baixar</SmallLabel>
         </IconsBottomWrapper>
-        <IconsBottomWrapper>
+        <IconsBottomWrapper
+          onPress={() =>
+            setMyListIcon(actual => (actual === 'plus' ? 'check' : 'plus'))
+          }>
           <IconBottomCircle>
-            <Feather name="plus" size={20} color="white" />
+            <Feather name={myListIcon} size={20} color="white" />
           </IconBottomCircle>
           <SmallLabel>Minha lista</SmallLabel>
         </IconsBottomWrapper>
