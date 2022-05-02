@@ -42,7 +42,7 @@ const Movies = ({ label, items, isTop10, startBottomSheet }) => {
       <MovieScroll horizontal>
         {items.map(({ id, poster }, index) => (
           <TouchableOpacity
-            key={id}
+            key={id + index}
             onPress={() =>
               startBottomSheet(id, 0, renderMovieCard(poster, index, false))
             }>

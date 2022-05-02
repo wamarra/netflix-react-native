@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { PermissionsAndroid, Platform } from 'react-native';
+import Geolocation from 'react-native-geolocation-service';
+import Geocoder from 'react-native-geocoder';
 
 const moviePostersApi = [
   { id: 'movie', poster: require('../assets/movie.jpg') },
@@ -35,16 +38,57 @@ const top10NumbersApi = {
 
 const moviesApi = require('../assets/movies.json');
 
+async function requestPermissions() {
+  if (Platform.OS === 'ios') {
+    await Geolocation.requestAuthorization('whenInUse');
+  }
+
+  if (Platform.OS === 'android') {
+    await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+    );
+  }
+}
+
 export const useMovie = () => {
   const [movies, setMovies] = React.useState([]);
+  const [nationalMovies, setNationalMovies] = React.useState([]);
   const [moviePosters, setMoviePosters] = React.useState([]);
   const [top10Numbers, setTop10Numbers] = React.useState([]);
 
-  React.useEffect(() => {
-    setMovies(moviesApi);
-    setMoviePosters(moviePostersApi);
-    setTop10Numbers(top10NumbersApi);
+  const getNationalMovies = React.useCallback(() => {
+    requestPermissions().then(() => {
+      Geolocation.getCurrentPosition(
+        pos => {
+          Geocoder.geocodePosition({
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+          }).then(res => {
+            const national = moviesApi.filter(
+              item => item.country === res[0].country,
+            );
+
+            setNationalMovies(
+              moviePostersApi.filter(item =>
+                national.filter(movie => item.id === movie.id),
+              ),
+            );
+          });
+        },
+        error => {
+          console.log(error.code, error.message);
+        },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
+      );
+    });
   }, []);
 
-  return { movies, moviePosters, top10Numbers };
+  React.useEffect(() => {
+    setMovies(moviesApi);
+    getNationalMovies();
+    setMoviePosters(moviePostersApi);
+    setTop10Numbers(top10NumbersApi);
+  }, [getNationalMovies]);
+
+  return { movies, moviePosters, top10Numbers, nationalMovies };
 };

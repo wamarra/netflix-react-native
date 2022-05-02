@@ -12,7 +12,7 @@ import { Container, Poster } from './home-styled';
 const posterImage = '../../assets/poster.jpg';
 
 const Home = ({ navigation }) => {
-  const { movies, moviePosters } = useMovie();
+  const { movies, moviePosters, nationalMovies } = useMovie();
   const [movie, setMovie] = React.useState();
   const [movieCard, setMovieCard] = React.useState();
   const [moviesRecentlyAdded, setMoviesRecentlyAdded] = React.useState([]);
@@ -87,6 +87,13 @@ const Home = ({ navigation }) => {
             startBottomSheet={handleSnapPress}
           />
         </Poster>
+        {nationalMovies?.length > 0 && (
+          <Movies
+            label="Filmes Brasileiros"
+            items={nationalMovies}
+            startBottomSheet={handleSnapPress}
+          />
+        )}
         <Movies
           label="Adicionados recentemente"
           items={moviesRecentlyAdded}

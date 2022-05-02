@@ -6,7 +6,8 @@
       "classification": "12",
       "duration": "38 min",
       "description": "Outer Banks acompanha um grupo de adolescentes da Carolina do Norte, mais conhecidos como 'Pogues'. John B (Chase Stokes) é o líder da gangue e passa seu tempo livre surfando e curtindo sua juventude."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie1": {
@@ -15,7 +16,8 @@
       "classification": "16",
       "duration": "40 min",
       "description": "Seis jovens são unidos por laços familiares, românticos e, principalmente, de amizade, enquanto tentam vingar em Nova York."
-    }
+    },
+    "country": "English"
   },
   {
     "movie2": {
@@ -24,7 +26,8 @@
       "classification": "L",
       "duration": "1h 40m",
       "description": "Os Irmãos Willoughby é a nova animação da Netflix e conta a história de quatro irmãos com pais egoístas que fazem um plano para se livrar deles de uma vez por todas e formar a família que desejam."
-    }
+    },
+    "country": "Japan"
   },
   {
     "movie3": {
@@ -33,7 +36,8 @@
       "classification": "L",
       "duration": "1h 39m",
       "description": "Sonic, o porco-espinho azul mais famoso do mundo, se junta com os seus amigos para derrotar o terrível Doutor Eggman, um cientista louco que planeja dominar o mundo, e o Doutor Robotnik, responsável..."
-    }
+    },
+    "country": "English"
   },
   {
     "movie4": {
@@ -42,7 +46,8 @@
       "classification": "L",
       "duration": "38m",
       "description": "Inspirada em momentos reais da infância da atriz e comediante Mindy Kaling, Eu Nunca... retrata a vida moderna e complicada de Devi (Maitreyi Ramakrishnan), uma adolescente americana..."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie5": {
@@ -51,7 +56,8 @@
       "classification": "16",
       "duration": "1h 42m",
       "description": "Um vírus mortal aniquilou a Grã-Bretanha há 6 meses. Os Estados Unidos anunciam que a guerra contra a contaminação foi vencida, com a reconstrução do país tendo início."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie6": {
@@ -60,7 +66,8 @@
       "classification": "16",
       "duration": "2h 12m",
       "description": "Em plena Guerra Fria, o advogado especializado em seguros James Donovan (Tom Hanks) aceita uma tarefa muito diferente do seu trabalho habitual: defender Rudolf Abel (Mark Rylance), um espião soviético capturado pelos americanos."
-    }
+    },
+    "country": "Japan"
   },
   {
     "movie7": {
@@ -69,7 +76,8 @@
       "classification": "12",
       "duration": "2h 04m",
       "description": "A região de Azeroth sempre viveu em paz, até a chegada dos guerreiros Orc. Com a abertura de um portal, eles puderam chegar à nova Terra com a intenção de destruir o povo inimigo."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie8": {
@@ -78,7 +86,8 @@
       "classification": "L",
       "duration": "1h 55m",
       "description": "Ben (Kevin Hart) trabalha como segurança em um colégio, e namora a bela Angela. Quando o namoro se torna sério, ele pensa em se casar com ela, mas antes tem que enfrentar o irmão protetor dela, James (Ice Cube), um policial linha dura."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie9": {
@@ -87,7 +96,8 @@
       "classification": "10",
       "duration": "1h 57m",
       "description": "Em 1952, uma grande nevasca leva uma plataforma de petróleo a se rachar, lançando 84 tripulantes ao mar. Enquanto a tempestade dificulta a sobrevivência do grupo, uma equipe de guardas costeiros tenta resgatar as vítimas."
-    }
+    },
+    "country": "Canada"
   },
   {
     "movie10": {
@@ -96,7 +106,8 @@
       "classification": "14",
       "duration": "1h 57m",
       "description": "A Terra repentinamente sofre uma série de ataques alienígenas. Na primeira onda de ataques, um pulso eletromagnético retira a eletricidade do planeta. Na segunda onda, um tsunami gigantesco mata 40% da população..."
-    }
+    },
+    "country": "USA"
   },
   {
     "movie11": {
@@ -105,7 +116,8 @@
       "classification": "16",
       "duration": "2h 12m",
       "description": "Adaptado do livro 'American Sniper: The Autobiography of the Most Lethal Sniper in U.S. Militar History', Sniper Americano conta a história real de Chris Kyle (Bradley Cooper), atirador de elite das forças especiais da marinha americana."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie12": {
@@ -114,7 +126,8 @@
       "classification": "16",
       "duration": "2h 20m",
       "description": "John Dillinger (Johnny Depp) era um criminoso audacioso e violento, mas que atraía a opinião pública ao seu favor, principalmente, porque dizia retirar das instituições financeiras o dinheiro que elas roubavam do cidadão."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie13": {
@@ -123,7 +136,8 @@
       "classification": "12",
       "duration": "1h 43m",
       "description": "Após perder a casa em uma tragédia devastadora, um pai e seu filho são forçados a se mudarem para a velha cabana da família. Nenhum dos dois reage bem à mudança para uma nova realidade."
-    }
+    },
+    "country": "USA"
   },
   {
     "movie14": {
@@ -132,7 +146,8 @@
       "classification": "16",
       "duration": "1h 48m",
       "description": "Ex-militar e mercenário, Wade Wilson (Ryan Reynolds) é diagnosticado com câncer em estado terminal, porém encontra uma possibilidade de cura em uma sinistra experiência científica."
-    }
+    },
+    "country": "Brazil"
   },
   {
     "movie15": {
@@ -141,7 +156,8 @@
       "classification": "10",
       "duration": "1h 50m",
       "description": "Década de 1980. Maria Altmann (Helen Mirren) é uma judia sobrevivente da Segunda Guerra Mundial que decide processar o governo austríaco para recuperar o quadro 'Woman in Gold', de Gustav Klimt..."
-    }
+    },
+    "country": "USA"
   },
   {
     "movie16": {
@@ -150,6 +166,7 @@
       "classification": "L",
       "duration": "1h 36m",
       "description": "Carter Chambers (Morgan Freeman) é um homem casado, que há 46 anos trabalha como mecânico. Submetido a um tratamento experimental para combater o câncer, ele se sente mal no trabalho e com isso é internado em um hospital."
-    }
+    },
+    "country": "English"
   }
 ]
