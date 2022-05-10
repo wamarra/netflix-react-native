@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Avatar from '../../components/avatar/avatar';
+import { translate } from '../../i18n';
 import { GoBackButton, RowContainer, Screen } from './profile-styled';
 
 const ProfileEdit = ({ navigation, route }) => {
@@ -18,7 +19,7 @@ const ProfileEdit = ({ navigation, route }) => {
 
   const setNavigationOptions = React.useCallback(() => {
     navigation.setOptions({
-      title: 'Gerenciar perfis',
+      title: translate('profile-manager'),
       headerTitleAlign: 'center',
       headerTitleStyle: {
         fontSize: 16,
@@ -31,7 +32,7 @@ const ProfileEdit = ({ navigation, route }) => {
       headerLeft: () => (
         <GoBackButton
           onPress={() => navigation.goBack()}
-          title="Concluído"
+          title={translate('done')}
           color="black"
         />
       ),

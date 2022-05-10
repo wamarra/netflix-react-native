@@ -2,13 +2,14 @@ import * as React from 'react';
 import { useAvatar } from '../../services/avatar';
 import Avatar from '../../components/avatar/avatar';
 import { Button, Label, Row, Screen } from './choose-avatar-styled';
+import { translate } from '../../i18n';
 
 const ChooseAvatar = ({ navigation, route }) => {
   const { avatars } = useAvatar();
 
   React.useEffect(() => {
     navigation.setOptions({
-      title: 'Choose your Avatar',
+      title: translate('choose-your-avatar'),
       headerTitleAlign: 'center',
       headerTitleStyle: {
         fontSize: 16,
@@ -23,7 +24,7 @@ const ChooseAvatar = ({ navigation, route }) => {
 
   return (
     <Screen>
-      <Label>Classic</Label>
+      <Label>{translate('classic')}</Label>
       <Row horizontal>
         {avatars.map((item, index) => (
           <Avatar
@@ -39,7 +40,7 @@ const ChooseAvatar = ({ navigation, route }) => {
           />
         ))}
       </Row>
-      <Label>Criar seu Avatar</Label>
+      <Label>{translate('create-your-avatar')}</Label>
       <Button
         color="#1a1718"
         title="CAMERA"

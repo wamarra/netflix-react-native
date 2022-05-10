@@ -17,6 +17,7 @@ import {
   TextButton,
   TextButtonPlay,
 } from './hero-styled';
+import { translate } from '../../i18n';
 
 const logo = '../../assets/logo.png';
 const banner = '../../assets/banner.png';
@@ -38,9 +39,9 @@ const Hero = ({ poster, startBottomSheet }) => {
       <LinearGradient colors={['transparent', 'black']}>
         <Banner resizeMode="contain" source={require(banner)} />
         <Tags>
-          <MenuTag>Envolvente</MenuTag>
+          <MenuTag>{translate('immersive')}</MenuTag>
           <Separator />
-          <MenuTag>Empolgantes</MenuTag>
+          <MenuTag>{translate('exciting')}</MenuTag>
         </Tags>
         <MenuHero>
           <Button
@@ -48,17 +49,17 @@ const Hero = ({ poster, startBottomSheet }) => {
               setMyListIcon(actual => (actual === 'plus' ? 'check' : 'plus'))
             }>
             <Feather name={myListIcon} size={26} color="white" />
-            <TextButton>Minha lista</TextButton>
+            <TextButton>{translate('my-list')}</TextButton>
           </Button>
 
           <Play>
             <Ionicons name="ios-play" size={23} color="black" />
-            <TextButtonPlay>Assistir</TextButtonPlay>
+            <TextButtonPlay>{translate('watch')}</TextButtonPlay>
           </Play>
 
           <Button onPress={() => startBottomSheet('movie', 0, renderMovieCard)}>
             <Feather name="info" size={22} color="white" />
-            <TextButton>Saiba mais</TextButton>
+            <TextButton>{translate('know-more')}</TextButton>
           </Button>
         </MenuHero>
       </LinearGradient>

@@ -23,6 +23,24 @@ const moviePostersApi = [
   { id: 'movie16', poster: require('../assets/movie16.jpg') },
 ];
 
+const moviesToResumeApi = {
+  José: [{ id: 'movie8', poster: require('../assets/movie8.jpg') }],
+  Luiz: [{ id: 'movie12', poster: require('../assets/movie12.jpg') }],
+  João: [
+    { id: 'movie13', poster: require('../assets/movie13.jpg') },
+    { id: 'movie14', poster: require('../assets/movie14.jpg') },
+  ],
+  Maria: [
+    { id: 'movie4', poster: require('../assets/movie4.jpg') },
+    { id: 'movie5', poster: require('../assets/movie5.jpg') },
+  ],
+  Pedro: [
+    { id: 'movie15', poster: require('../assets/movie15.jpg') },
+    { id: 'movie16', poster: require('../assets/movie16.jpg') },
+    { id: 'movie1', poster: require('../assets/movie1.jpg') },
+  ],
+};
+
 const top10NumbersApi = {
   0: require('../assets/top10/top1.png'),
   1: require('../assets/top10/top2.png'),
@@ -52,6 +70,7 @@ async function requestPermissions() {
 
 export const useMovie = () => {
   const [movies, setMovies] = React.useState([]);
+  const [moviesToResume, setMoviesToResume] = React.useState([]);
   const [nationalMovies, setNationalMovies] = React.useState([]);
   const [moviePosters, setMoviePosters] = React.useState([]);
   const [top10Numbers, setTop10Numbers] = React.useState([]);
@@ -85,10 +104,11 @@ export const useMovie = () => {
 
   React.useEffect(() => {
     setMovies(moviesApi);
+    setMoviesToResume(moviesToResumeApi);
     getNationalMovies();
     setMoviePosters(moviePostersApi);
     setTop10Numbers(top10NumbersApi);
   }, [getNationalMovies]);
 
-  return { movies, moviePosters, top10Numbers, nationalMovies };
+  return { movies, moviesToResume, moviePosters, top10Numbers, nationalMovies };
 };

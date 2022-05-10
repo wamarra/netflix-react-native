@@ -10,6 +10,8 @@ import ChooseAvatar from './screens/choose-avatar/choose-avatar';
 import Tabs from './routes/tabs';
 import CameraScreen from './screens/camera-screen/camera-screen';
 import { Container } from './styles/global-styles';
+import { AppProvider } from './contexts/app-context';
+import { getLanguage, setLocale } from './i18n';
 
 async function requestUserPermission() {
   const authStatus = await messaging().requestPermission();
@@ -24,6 +26,7 @@ async function requestUserPermission() {
 }
 
 const Stack = createNativeStackNavigator();
+setLocale(getLanguage());
 
 const App = () => {
   requestUserPermission();
@@ -35,20 +38,22 @@ const App = () => {
   }, []);
 
   return (
-    <Container>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Tab"
-            component={Tabs}
-            options={{ headerShown: false, fullScreenGestureEnabled: true }}
-          />
-          <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
-          <Stack.Screen name="ChooseAvatar" component={ChooseAvatar} />
-          <Stack.Screen name="CameraScreen" component={CameraScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Container>
+    <AppProvider>
+      <Container>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Tab"
+              component={Tabs}
+              options={{ headerShown: false, fullScreenGestureEnabled: true }}
+            />
+            <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
+            <Stack.Screen name="ChooseAvatar" component={ChooseAvatar} />
+            <Stack.Screen name="CameraScreen" component={CameraScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Container>
+    </AppProvider>
   );
 };
 

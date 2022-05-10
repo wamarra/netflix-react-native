@@ -9,6 +9,8 @@ import {
   Row,
   Screen,
 } from './profile-styled';
+import { AppContext } from '../../contexts/app-context.js';
+import { translate } from '../../i18n/index.js';
 
 const replaceAvatarsWithImage = (profiles, route) => {
   if (route?.params?.name) {
@@ -45,25 +47,32 @@ const ProfileView = ({ navigation, route }) => {
   }, [navigation, profiles]);
 
   return (
-    <Screen>
-      <AvantarsContainer>
-        <Row horizontal>
-          {profiles.map(profile => (
-            <Avatar
-              key={profile.name}
-              image={profile.icon}
-              uri={profile.uri}
-              name={profile.name}
-              onPress={selectProfile}
-            />
-          ))}
-        </Row>
-      </AvantarsContainer>
-      <NetflixButton onPress={editProfile}>
-        <Icon name="edit" size={24} color="gray" />
-        <ButtonLabel>Gerenciar perfis</ButtonLabel>
-      </NetflixButton>
-    </Screen>
+    <AppContext.Consumer>
+      {({ setUser }) => (
+        <Screen>
+          <AvantarsContainer>
+            <Row horizontal>
+              {profiles.map(profile => (
+                <Avatar
+                  key={profile.name}
+                  image={profile.icon}
+                  uri={profile.uri}
+                  name={profile.name}
+                  onPress={() => {
+                    setUser(profile);
+                    selectProfile(profile);
+                  }}
+                />
+              ))}
+            </Row>
+          </AvantarsContainer>
+          <NetflixButton onPress={editProfile}>
+            <Icon name="edit" size={24} color="gray" />
+            <ButtonLabel>{translate('profile-manager')}</ButtonLabel>
+          </NetflixButton>
+        </Screen>
+      )}
+    </AppContext.Consumer>
   );
 };
 

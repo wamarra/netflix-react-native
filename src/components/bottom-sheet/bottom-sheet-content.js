@@ -15,6 +15,7 @@ import {
 } from './bottom-sheet-content-styled';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { translate } from '../../i18n';
 
 const BottomSheetContent = ({ movieCard, movie, handleClosePress }) => {
   const [myListIcon, setMyListIcon] = React.useState('plus');
@@ -43,13 +44,13 @@ const BottomSheetContent = ({ movieCard, movie, handleClosePress }) => {
           <IconBottomCircle active>
             <Ionicons name="ios-play" size={20} color="black" />
           </IconBottomCircle>
-          <SmallLabel>Assistir</SmallLabel>
+          <SmallLabel>{translate('watch')}</SmallLabel>
         </IconsBottomWrapper>
         <IconsBottomWrapper>
           <IconBottomCircle>
             <Feather name="download" size={20} color="white" />
           </IconBottomCircle>
-          <SmallLabel>Baixar</SmallLabel>
+          <SmallLabel>{translate('donwloads')}</SmallLabel>
         </IconsBottomWrapper>
         <IconsBottomWrapper
           onPress={() =>
@@ -58,13 +59,13 @@ const BottomSheetContent = ({ movieCard, movie, handleClosePress }) => {
           <IconBottomCircle>
             <Feather name={myListIcon} size={20} color="white" />
           </IconBottomCircle>
-          <SmallLabel>Minha lista</SmallLabel>
+          <SmallLabel>{translate('my-list')}</SmallLabel>
         </IconsBottomWrapper>
         <IconsBottomWrapper>
           <IconBottomCircle>
             <Feather name="share-2" size={20} color="white" />
           </IconBottomCircle>
-          <SmallLabel>Compartilhe</SmallLabel>
+          <SmallLabel>{translate('share')}</SmallLabel>
         </IconsBottomWrapper>
       </ContainerIconBottoms>
     </BottomSheetWrapper>

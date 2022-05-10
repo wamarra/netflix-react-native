@@ -6,19 +6,22 @@ import BottomSheetContent from '../../components/bottom-sheet/bottom-sheet-conte
 import Header from '../../components/header/header';
 import Hero from '../../components/hero/hero';
 import Movies from '../../components/movies/movies';
+import { AppContext } from '../../contexts/app-context';
+import { getLanguage, translate } from '../../i18n';
 import { useMovie } from '../../services/movie';
 import { Container, Poster } from './home-styled';
 
 const posterImage = '../../assets/poster.jpg';
 
 const Home = ({ navigation }) => {
-  const { movies, moviePosters, nationalMovies } = useMovie();
+  const { user } = React.useContext(AppContext);
+  const { movies, moviesToResume, moviePosters, nationalMovies } = useMovie();
   const [movie, setMovie] = React.useState();
   const [movieCard, setMovieCard] = React.useState();
+  const [resumedMovies, setResumedMovies] = React.useState([]);
   const [moviesRecentlyAdded, setMoviesRecentlyAdded] = React.useState([]);
   const [moviesOnHigh, setMoviesOnHigh] = React.useState([]);
   const [top10, setTop10] = React.useState([]);
-
   const sheetRef = React.useRef(null);
   const snapPoints = React.useMemo(() => ['33%'], []);
   const handleIndicatorStyle = React.useMemo(() => ({ display: 'none' }), []);
@@ -72,6 +75,14 @@ const Home = ({ navigation }) => {
     setTop10(top10Items);
   }, [moviePosters]);
 
+  React.useEffect(() => {
+    setResumedMovies(moviesToResume[user?.name]);
+  }, [moviesToResume, user]);
+
+  React.useEffect(() => {
+    console.log(getLanguage());
+  }, []);
+
   return (
     <>
       <StatusBar
@@ -87,26 +98,33 @@ const Home = ({ navigation }) => {
             startBottomSheet={handleSnapPress}
           />
         </Poster>
+        {resumedMovies?.length > 0 && (
+          <Movies
+            label={translate('continue')}
+            items={resumedMovies}
+            startBottomSheet={handleSnapPress}
+          />
+        )}
         {nationalMovies?.length > 0 && (
           <Movies
-            label="Filmes Brasileiros"
+            label={translate('national-movies')}
             items={nationalMovies}
             startBottomSheet={handleSnapPress}
           />
         )}
         <Movies
-          label="Adicionados recentemente"
+          label={translate('recently-added')}
           items={moviesRecentlyAdded}
           startBottomSheet={handleSnapPress}
         />
         <Movies
-          label="Top 10 no Brasil hoje"
+          label={translate('top-10')}
           items={top10}
           isTop10
           startBottomSheet={handleSnapPress}
         />
         <Movies
-          label="Em alta"
+          label={translate('on-high')}
           items={moviesOnHigh}
           startBottomSheet={handleSnapPress}
         />

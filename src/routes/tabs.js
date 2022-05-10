@@ -3,6 +3,7 @@ import * as React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { translate } from '../i18n';
 import Downloads from '../screens/downloads/downloads';
 import Search from '../screens/search/search';
 import Soon from '../screens/soon/soon';
@@ -24,7 +25,7 @@ const Tabs = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: translate('home'),
           tabBarIcon: ({ color, size }) => (
             <Icon name="home" size={size} color={color} />
           ),
@@ -34,7 +35,7 @@ const Tabs = () => {
         name="Search"
         component={Search}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: translate('search'),
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="search1" size={size} color={color} />
           ),
@@ -44,7 +45,7 @@ const Tabs = () => {
         name="Soon"
         component={Soon}
         options={{
-          tabBarLabel: 'Soon',
+          tabBarLabel: translate('soon'),
           tabBarIcon: ({ color, size }) => (
             <Icon name="perm-media" size={size} color={color} />
           ),
@@ -54,7 +55,7 @@ const Tabs = () => {
         name="Donwloads"
         component={Downloads}
         options={{
-          tabBarLabel: 'Donwloads',
+          tabBarLabel: translate('donwloads'),
           tabBarIcon: ({ color, size }) => (
             <Feather name="download" size={size} color={color} />
           ),
@@ -64,7 +65,7 @@ const Tabs = () => {
         name="ProfileView"
         component={ProfileView}
         options={{
-          tabBarLabel: 'More',
+          tabBarLabel: translate('more'),
           tabBarIcon: ({ color, size }) => (
             <Icon name="menu" size={size} color={color} />
           ),

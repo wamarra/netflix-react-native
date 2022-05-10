@@ -1,5 +1,6 @@
 import * as React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
+import { translate } from '../../i18n';
 import { Container, Logo, Menu } from './header-styled';
 
 const logo = '../../assets/logo.png';
@@ -8,7 +9,7 @@ const Header = ({ navigation }) => {
   const [menu, setMenu] = React.useState([]);
 
   React.useEffect(() => {
-    setMenu(['Séries', 'Filmes', 'Minha lista']);
+    setMenu([translate('series'), translate('movies'), translate('my-list')]);
   }, []);
 
   return (
